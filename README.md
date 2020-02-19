@@ -1,4 +1,4 @@
-# bookscrapper
+# BookScrapper
 Book Scraper is a software, for the moment, it just downloads books when they are nominated with an algorithm easy to find. Later i will increment the algoritm to increase the speed of the download the books. The ideal scenario is implement the selenium library to expand the possible targets. 
 In the current version, the interface run in the terminal. Posteriorly will run in a cross-platform(Windows and Linux) GUI library.
 
