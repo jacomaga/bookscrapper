@@ -9,10 +9,12 @@ import glob
 
 
 
-
+#id_book is an optional, bcs in certains cases the URL off the books need to be personalized example: https://libraryoffchicago/books/"id_book"/image1.jpg 
 id_book=input("Insert the book's ID:")
 nm_pages= int(input("Insert the total number of pages:"))
-name_book= input("What's the book name?")
+#name_book = the name off the folder who will be created
+name_book= input("What's the book name? ")
+#acess rights off the folders 
 acess_rights = "0o755"
 i=1
 images = []
@@ -39,10 +41,10 @@ while i <= nm_pages:
         urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
         images.append("p_"+str(i)+".jpg")
         i += 1
-    except: print("Error ocurred")
+    except: print("A problem ocurred")
 
 
-""
+#After we scrapped the images, now we gonna convert the images into a pdf file
 dir_book= os.getcwd()+"/"+name_book
 conv_imgs = []
 
@@ -59,4 +61,4 @@ img1.save(r''+dir_book+"/"+name_book+".pdf", save_all=True,append_images=conv_im
 
     
     
-print(images)    
+ 
