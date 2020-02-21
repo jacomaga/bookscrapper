@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import os
 from PIL import Image
 import glob
-
+import time
 
 
 #id_book is an optional, bcs in certains cases the URL off the books need to be personalized example: https://libraryoffchicago/books/"id_book"/image1.jpg 
@@ -25,24 +25,22 @@ except OSError:
     print ("Creation of the directory %s failed" % name_book)
 else:
     print ("Successfully created the directory %s" % name_book)
+begin = time.time()
 
 while i <= nm_pages:
     
     try:
-        urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
+
+        urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
         images.append("p_"+str(i)+".jpg")
         i += 1
-        urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
-        images.append("p_"+str(i)+".jpg")
-        i += 1
-        urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
-        images.append("p_"+str(i)+".jpg")
-        i += 1
-        urllib.request.urlretrieve("http://www.agricultura.gov.br/noticias/cao-e-usado-pela-primeira-vez-na-fiscalizacao-agropecuaria-brasileira/"+str(i)+".jpg", name_book+"/p_"+str(i)+".jpg")
-        images.append("p_"+str(i)+".jpg")
-        i += 1
+    
+
+             
     except: print("A problem ocurred")
 
+end=time.time()
+print(begin-end)
 
 #After we scrapped the images, now we gonna convert the images into a pdf file
 dir_book= os.getcwd()+"/"+name_book
