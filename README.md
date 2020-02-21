@@ -20,7 +20,7 @@ Na versão atual, a interface é executada no terminal. Posteriormente, ele ser�
 -----------------------------------------------------------------------------------------------------------------------------
 # Thinking about the future
 
-#        API creation
+#        Next features 
 - URL customization
 - array for unordered file names
 - identification of img elements through BeautifulSoup findall (img) to feed an array
@@ -29,7 +29,7 @@ Na versão atual, a interface é executada no terminal. Posteriormente, ele ser�
 - cover more than one type of image extension
 
 # Pensando no futuro
-#            Criação de api
+#            Next features 
 
 -   personalização de URL 
 -   array para nome de arquivos não ordenados
